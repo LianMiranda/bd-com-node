@@ -6,10 +6,6 @@ const app = express();
 app.use(express.json())
 const pokemon = require("./modelos/pokemon.js")
 
-
-
-
-
 const setup = async () =>{
     const mongod =  await MongoMemoryServer.create();
     console.log("Banco em: ", mongod.getUri()); 
@@ -31,7 +27,7 @@ const setup = async () =>{
     });
     app.get("/pokemons", async (req, res) =>{
         const pokemons = await pokemon.find({});
-        res.send(novoPokemon);
+        res.send(pokemons);
     })
     app.listen(3000, ()=>{
         console.log("Ouvindo em https://localhost:3000")

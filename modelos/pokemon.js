@@ -21,4 +21,4 @@ const schemaPokemon = new Schema({
 
 const modeloPokemon = mongoose.model('Pokemon', schemaPokemon);
 
-module.export = modeloPokemon; 
+module.exports = modeloPokemon; 
